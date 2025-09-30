@@ -144,7 +144,7 @@ class MAIN:
 		self.snake.reset()
 
 	def draw_grass(self):
-		grass_color = (167,209,61)
+		grass_color = (162, 209, 73)
 		for row in range(cell_number):
 			if row % 2 == 0: 
 				for col in range(cell_number):
@@ -173,11 +173,12 @@ class MAIN:
 
 pygame.mixer.pre_init(44100,-16,2,512)
 pygame.init()
+pygame.display.set_caption('Snake Game by Rishit Agrawal')
 cell_size = 40
 cell_number = 20
 screen = pygame.display.set_mode((cell_number * cell_size,cell_number * cell_size))
 clock = pygame.time.Clock()
-apple = pygame.image.load('Graphics/apple.png').convert_alpha()
+apple = pygame.image.load('Graphics/apple_00.png').convert_alpha()
 game_font = pygame.font.Font('Font/PoetsenOne-Regular.ttf', 25)
 
 SCREEN_UPDATE = pygame.USEREVENT
@@ -206,7 +207,7 @@ while True:
 				if main_game.snake.direction.x != 1:
 					main_game.snake.direction = Vector2(-1,0)
 
-	screen.fill((175,215,70))
+	screen.fill((170, 215, 81))
 	main_game.draw_elements()
 	pygame.display.update()
 	clock.tick(300)
